@@ -6,6 +6,8 @@ import os
 import math
 
 app = Ursina()
+from ursina.prefabs.hot_reloader import HotReloader
+HotReloader.enabled = False
 
 block_textures = {
     1: 'grass.png',
@@ -174,6 +176,11 @@ class Player(Entity):
 
 Sky()
 player = Player()
+
+create_hotbar()
+load_world()
+
+app.run()
 
 create_hotbar()
 load_world()
