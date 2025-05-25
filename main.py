@@ -14,7 +14,8 @@ block_textures = {
     2: 'dirt.png',
     3: 'stone.png',
     4: 'oak_planks.png',
-    5: 'cobblestone.png'
+    5: 'cobblestone.png',
+    6: 'leaves.png'
 }
 
 current_block = 1
@@ -69,7 +70,7 @@ def load_world():
     print("Monde chargé !")
 
 def create_hotbar():
-    for i in range(5):
+    for i in range(6):
         icon = Entity(
             model='quad',
             texture=block_textures[i+1],
@@ -89,6 +90,7 @@ def input(key):
     if key == '3': current_block = 3
     if key == '4': current_block = 4
     if key == '5': current_block = 5
+    if key == '6': current_block = 6
     if key == 'f5': save_world()
     if key == 'f9': load_world()
     if key == 'escape': application.quit()          # Quitte le jeu
