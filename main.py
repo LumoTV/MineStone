@@ -12,7 +12,9 @@ HotReloader.enabled = False
 block_textures = {
     1: 'grass.png',
     2: 'dirt.png',
-    3: 'stone.png'
+    3: 'stone.png',
+    4: 'oak_planks.png',
+    5: 'cobblestone.png'
 }
 
 current_block = 1
@@ -67,7 +69,7 @@ def load_world():
     print("Monde chargé !")
 
 def create_hotbar():
-    for i in range(3):
+    for i in range(5):
         icon = Entity(
             model='quad',
             texture=block_textures[i+1],
@@ -85,6 +87,8 @@ def input(key):
     if key == '1': current_block = 1
     if key == '2': current_block = 2
     if key == '3': current_block = 3
+    if key == '4': current_block = 4
+    if key == '5': current_block = 5
     if key == 'f5': save_world()
     if key == 'f9': load_world()
     if key == 'escape': application.quit()          # Quitte le jeu
@@ -176,11 +180,6 @@ class Player(Entity):
 
 Sky()
 player = Player()
-
-create_hotbar()
-load_world()
-
-app.run()
 
 create_hotbar()
 load_world()
